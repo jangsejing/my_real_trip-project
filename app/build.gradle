@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -12,6 +11,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -21,17 +21,32 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    dataBinding {
+        enabled = true
+    }
+
+    dexOptions {
+        jumboMode true
+        javaMaxHeapSize "Xg"
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def appName = 'jess'
+            def buildType = buildType.name
+            def date = new Date().format('yyMMddHHmm')
+            def apkName = appName + '_' + buildType + '_' + date + '.apk'
+            outputFileName = apkName
+        }
+    }
 }
 
 // test
 dependencies {
-
-    // Core library
     testImplementation 'androidx.test:core:1.2.0'
-    // Assertions
     testImplementation 'androidx.test.ext:junit:1.1.1'
-    // mock
-    testImplementation 'org.mockito:mockito-core:2.25.0'
+    testImplementation 'org.mockito:mockito-core:2.25.0' // mock
     testImplementation 'org.mockito:mockito-inline:2.25.0'
     testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.2'
     testImplementation 'androidx.arch.core:core-testing:2.1.0'
@@ -64,7 +79,6 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.paging:paging-runtime:2.1.1'
-    implementation 'androidx.browser:browser:1.2.0'
 
     def lifeCycle = '2.2.0'
     implementation "androidx.lifecycle:lifecycle-extensions:$lifeCycle"
@@ -75,6 +89,15 @@ dependencies {
 // google
 dependencies {
     implementation 'com.google.android.material:material:1.1.0'
+
+    // dagger
+    def dagger = '2.27'
+    implementation "com.google.dagger:dagger:$dagger"
+    kapt "com.google.dagger:dagger-compiler:$dagger"
+
+    implementation "com.google.dagger:dagger-android:$dagger"
+    implementation "com.google.dagger:dagger-android-support:$dagger"
+    kapt "com.google.dagger:dagger-android-processor:$dagger"
 }
 
 // glide
