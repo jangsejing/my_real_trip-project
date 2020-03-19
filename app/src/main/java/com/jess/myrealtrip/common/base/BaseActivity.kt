@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
+import com.jess.myrealtrip.BR
 import com.jess.myrealtrip.common.extension.createViewModel
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
@@ -49,7 +50,7 @@ abstract class BaseActivity<VD : ViewDataBinding, VM : BaseViewModel> : DaggerAp
         binding = DataBindingUtil.setContentView(this, layoutRes)
         binding.run {
             lifecycleOwner = this@BaseActivity
-//            setVariable(BR.viewModel, viewModel)
+            setVariable(BR.viewModel, viewModel)
         }
     }
 }

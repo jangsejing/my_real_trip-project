@@ -3,6 +3,8 @@ package com.jess.myrealtrip.di
 import com.jess.myrealtrip.JessApplication
 import com.jess.myrealtrip.di.module.ActivityModule
 import com.jess.myrealtrip.di.module.AppModule
+import com.jess.myrealtrip.di.module.NetworkModule
+import com.jess.myrealtrip.di.module.RepositoryModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -20,7 +22,9 @@ import javax.inject.Singleton
     modules = [
         AndroidSupportInjectionModule::class,
         AppModule::class,
-        ActivityModule::class
+        ActivityModule::class,
+        NetworkModule::class,
+        RepositoryModule::class
     ]
 )
 

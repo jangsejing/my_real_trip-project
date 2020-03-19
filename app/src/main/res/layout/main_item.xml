@@ -3,6 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="item"
+            type="com.jess.myrealtrip.data.RssData.ItemData" />
+
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,6 +46,9 @@
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{item.title}"
                 android:textColor="@android:color/primary_text_light"
                 android:textSize="17sp"
                 android:textStyle="bold"
@@ -51,6 +62,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="2"
+                android:text="@{item.description}"
                 android:textColor="@android:color/secondary_text_light"
                 android:textSize="14sp"
                 app:layout_constraintLeft_toLeftOf="parent"

@@ -1,10 +1,10 @@
-package com.jess.myrealtrip.presenter.splash.view
+package com.jess.myrealtrip.presentation.splash.view
 
 import android.os.Bundle
 import com.jess.myrealtrip.R
 import com.jess.myrealtrip.common.base.BaseActivity
 import com.jess.myrealtrip.databinding.MainActivityBinding
-import com.jess.myrealtrip.presenter.splash.viewmodel.SplashViewModel
+import com.jess.myrealtrip.presentation.splash.viewmodel.SplashViewModel
 
 class SplashActivity : BaseActivity<MainActivityBinding, SplashViewModel>() {
 

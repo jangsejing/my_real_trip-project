@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.jess.myrealtrip">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".JessApplication"
         android:allowBackup="true"
@@ -13,7 +15,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".presenter.main.view.MainActivity">
+        <activity android:name=".presentation.main.view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

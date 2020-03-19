@@ -1,4 +1,4 @@
-package com.jess.myrealtrip.presenter.splash.viewmodel
+package com.jess.myrealtrip.presentation.splash.viewmodel
 
 import com.jess.myrealtrip.common.base.BaseViewModel
 

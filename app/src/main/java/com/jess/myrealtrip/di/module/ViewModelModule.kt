@@ -2,7 +2,7 @@ package com.jess.myrealtrip.di.module
 
 import androidx.lifecycle.ViewModel
 import com.jess.myrealtrip.di.qualifier.ViewModelKey
-import com.jess.myrealtrip.presenter.main.viewmodel.MainViewModel
+import com.jess.myrealtrip.presentation.main.viewmodel.MainViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
