@@ -1,4 +1,4 @@
-package com.ddd.airplane.common.views.component
+package com.jess.myrealtrip.common.view.component
 
 import android.content.Context
 import android.util.AttributeSet

@@ -7,8 +7,8 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
-import com.ddd.airplane.common.extension.addCircleRipple
-import com.ddd.airplane.common.extension.addRipple
+import com.jess.myrealtrip.common.extension.addCircleRipple
+import com.jess.myrealtrip.common.extension.addRipple
 
 /**
  * Base RecyclerView Adapter for DataBinding
