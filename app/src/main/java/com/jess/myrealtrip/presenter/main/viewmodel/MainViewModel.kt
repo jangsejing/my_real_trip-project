@@ -1,8 +1,9 @@
 package com.jess.myrealtrip.presenter.main.viewmodel
 
-import android.app.Application
 import com.jess.myrealtrip.common.base.BaseViewModel
+import javax.inject.Inject
 
-class MainViewModel(application: Application) : BaseViewModel(application) {
+class MainViewModel @Inject constructor() : BaseViewModel() {
+
 
 }

@@ -1,11 +1,11 @@
 package com.jess.myrealtrip
 
-import com.jess.myrealtrip.di.compnent.DaggerAppComponent
+import com.jess.myrealtrip.di.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 import timber.log.Timber
 
-class MainApplication : DaggerApplication() {
+class JessApplication : DaggerApplication() {
 
     override fun onCreate() {
         super.onCreate()
