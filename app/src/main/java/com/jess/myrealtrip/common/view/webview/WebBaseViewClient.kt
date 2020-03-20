@@ -11,7 +11,7 @@ import android.webkit.WebViewClient
 import com.jess.myrealtrip.common.util.tryCatch
 
 /**
- * @author 장세진
+ * @author jess
  * @description WebChromeClient for WebView
  */
 class WebBaseViewClient(private val context: Context?) : WebViewClient() {

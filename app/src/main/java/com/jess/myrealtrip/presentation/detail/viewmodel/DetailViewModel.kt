@@ -7,7 +7,8 @@ import com.jess.myrealtrip.data.NewsData
 import javax.inject.Inject
 
 /**
- * Main ViewModel
+ * @author jess
+ * @since 2020.03.20
  */
 class DetailViewModel @Inject constructor(
 

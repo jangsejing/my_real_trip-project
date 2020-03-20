@@ -4,6 +4,11 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 
+/**
+ * @author jess
+ * @since 2020.03.20
+ */
+
 /** 기본 예외 처리기 */
 private val defaultExceptionHandler = CoroutineExceptionHandler { _, throwable ->
     throwable.printStackTrace()

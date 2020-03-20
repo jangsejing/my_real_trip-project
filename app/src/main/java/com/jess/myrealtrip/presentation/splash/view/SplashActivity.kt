@@ -6,12 +6,13 @@ import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.jess.myrealtrip.R
-import com.jess.myrealtrip.common.base.BaseActivity
-import com.jess.myrealtrip.databinding.MainActivityBinding
 import com.jess.myrealtrip.databinding.SplashActivityBinding
 import com.jess.myrealtrip.presentation.main.view.MainActivity
-import com.jess.myrealtrip.presentation.splash.viewmodel.SplashViewModel
 
+/**
+ * @author jess
+ * @since 2020.03.20
+ */
 class SplashActivity : AppCompatActivity() {
 
     lateinit var binding: SplashActivityBinding

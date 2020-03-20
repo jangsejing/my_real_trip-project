@@ -7,6 +7,10 @@ import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
+/**
+ * @author jess
+ * @since 2020.03.20
+ */
 abstract class BaseViewModel: ViewModel() {
 
     // progress

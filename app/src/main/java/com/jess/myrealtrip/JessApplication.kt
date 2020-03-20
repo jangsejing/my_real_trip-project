@@ -6,6 +6,10 @@ import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 import timber.log.Timber
 
+/**
+ * @author jess
+ * @since 2020.03.20
+ */
 class JessApplication : DaggerApplication() {
 
     override fun onCreate() {

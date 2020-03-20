@@ -11,6 +11,7 @@ import javax.inject.Inject
 
 /**
  * @author jess
+ * @since 2020.03.20
  */
 abstract class BaseActivity<VD : ViewDataBinding, VM : BaseViewModel> : DaggerAppCompatActivity() {
 

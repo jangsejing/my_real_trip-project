@@ -12,10 +12,8 @@ import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 /**
- * Jess Component
- *
  * @author jess
- * @since 2020.03.18
+ * @since 2020.03.20
  */
 @Singleton
 @Component(

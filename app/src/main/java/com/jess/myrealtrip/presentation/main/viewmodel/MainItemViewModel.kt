@@ -13,9 +13,9 @@ import timber.log.Timber
 import java.util.*
 import kotlin.collections.HashMap
 
-
 /**
- * Item ViewModel
+ * @author jess
+ * @since 2020.03.20
  */
 class MainItemViewModel(private val data: NewsData?) : BaseItemViewModel() {
 

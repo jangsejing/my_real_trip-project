@@ -1,10 +1,13 @@
-package com.ddd.airplane.common.extension
+package com.jess.myrealtrip.common.extension
 
 import android.content.Context
 import android.widget.Toast
-import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
-import androidx.core.content.ContextCompat
+
+/**
+ * @author jess
+ * @since 2020.03.20
+ */
 
 /**
  * Toast

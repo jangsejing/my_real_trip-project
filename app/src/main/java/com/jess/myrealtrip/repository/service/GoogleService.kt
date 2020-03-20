@@ -4,6 +4,10 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
+/**
+ * @author jess
+ * @since 2020.03.20
+ */
 interface GoogleService {
 
     /**

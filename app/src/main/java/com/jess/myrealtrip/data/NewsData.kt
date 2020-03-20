@@ -4,6 +4,10 @@ import androidx.databinding.ObservableField
 import com.jess.myrealtrip.data.RssResponseData.RssData.ChannelData.ItemData.SourceData
 import java.io.Serializable
 
+/**
+ * @author jess
+ * @since 2020.03.20
+ */
 class NewsData(
     val title: String? = null,
     val link: String? = null,

@@ -12,6 +12,10 @@ import com.jess.myrealtrip.presentation.detail.viewmodel.DetailViewModel
 import kotlinx.android.synthetic.main.detail_activity.*
 import kotlinx.android.synthetic.main.detail_activity.view.*
 
+/**
+ * @author jess
+ * @since 2020.03.20
+ */
 class DetailActivity : BaseActivity<DetailActivityBinding, DetailViewModel>() {
 
     override val layoutRes = R.layout.detail_activity

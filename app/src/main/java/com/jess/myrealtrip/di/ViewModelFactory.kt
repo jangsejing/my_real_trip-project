@@ -7,8 +7,6 @@ import javax.inject.Provider
 import javax.inject.Singleton
 
 /**
- * ViewModel Factory Module
- *
  * @author jess
  * @since 2020.03.18
  */

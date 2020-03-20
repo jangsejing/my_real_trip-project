@@ -1,5 +1,9 @@
 package com.jess.myrealtrip.common.util
 
+/**
+ * @author jess
+ * @since 2020.03.20
+ */
 object StringUtils {
     /**
      * 특수문자 여부

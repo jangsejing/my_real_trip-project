@@ -5,6 +5,10 @@ import com.jess.myrealtrip.di.ViewModelFactory
 import dagger.Binds
 import dagger.Module
 
+/**
+ * @author jess
+ * @since 2020.03.20
+ */
 @Module(includes = [ViewModelModule::class, ViewModelFactoryModule::class])
 class AppModule {
 

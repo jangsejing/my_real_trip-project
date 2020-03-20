@@ -1,7 +1,5 @@
 package com.jess.myrealtrip.common.util
 
-import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
 import timber.log.Timber
 
 /**

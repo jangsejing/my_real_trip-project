@@ -2,6 +2,10 @@ package com.jess.myrealtrip.data
 
 import java.io.Serializable
 
+/**
+ * @author jess
+ * @since 2020.03.20
+ */
 class RssResponseData(
     val rss: RssData?
 ) {

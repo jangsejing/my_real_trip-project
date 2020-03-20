@@ -13,9 +13,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 /**
- * Main ViewModel
- *
- * @property repository
+ * @author jess
+ * @since 2020.03.20
  */
 class MainViewModel @Inject constructor(
     private val repository: GoogleRepository

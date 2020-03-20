@@ -7,7 +7,8 @@ import com.jess.myrealtrip.repository.service.GoogleService
 import fr.arnaudguyon.xmltojsonlib.XmlToJson
 
 /**
- * General Repository
+ * @author jess
+ * @since 2020.03.20
  */
 interface GoogleRepository {
     suspend fun getList(): RssResponseData.RssData.ChannelData?

@@ -5,6 +5,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jess.myrealtrip.BR
 import com.jess.myrealtrip.common.util.tryCatch
 
+/**
+ * @author jess
+ * @since 2020.03.20
+ */
 open class BaseViewHolder<T : Any?>(
     val viewDataBinding: ViewDataBinding
 ) : RecyclerView.ViewHolder(viewDataBinding.root) {

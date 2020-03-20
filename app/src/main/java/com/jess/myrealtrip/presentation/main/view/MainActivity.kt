@@ -19,8 +19,6 @@ import kotlinx.android.synthetic.main.main_activity.*
 import timber.log.Timber
 
 /**
- * MainActivity
- *
  * @author jess
  * @since 2020.03.20
  */

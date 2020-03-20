@@ -11,10 +11,8 @@ import com.jess.myrealtrip.common.extension.addCircleRipple
 import com.jess.myrealtrip.common.extension.addRipple
 
 /**
- * Base RecyclerView Adapter for DataBinding
- *
  * @author jess
- * @since 2019-06-07
+ * @since 2020.03.20
  */
 internal abstract class BaseRecyclerViewAdapter<T : Any, VD : ViewDataBinding>(
     @LayoutRes private val layoutId: Int = 0
