@@ -16,13 +16,21 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".presentation.main.view.MainActivity">
+        <activity android:name=".presentation.splash.view.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".presentation.main.view.MainActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".presentation.detail.view.DetailActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>

@@ -28,13 +28,19 @@ class MainViewModel @Inject constructor(
      * News 정보 가져오기
      */
     fun getNews() {
+
+        _isProgress.value = true
+
         CoroutineScope(ioDispatchers).safeScope().launch {
             repository.getList()?.let { channel ->
-                val list = mutableListOf<NewsData>()
-                channel.item?.forEach { item ->
-                    list.add(NewsData(item.title, item.link))
+                CoroutineScope(uiDispatchers).safeScope().launch {
+                    val list = mutableListOf<NewsData>()
+                    channel.item?.forEach { item ->
+                        list.add(NewsData(item.title, item.link, item.source))
+                    }
+                    _item.postValue(list)
+                    _isProgress.postValue(false)
                 }
-                _item.postValue(list)
             }
         }
     }

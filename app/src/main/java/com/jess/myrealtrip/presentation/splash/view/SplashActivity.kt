@@ -1,22 +1,27 @@
 package com.jess.myrealtrip.presentation.splash.view
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.jess.myrealtrip.R
 import com.jess.myrealtrip.common.base.BaseActivity
 import com.jess.myrealtrip.databinding.MainActivityBinding
+import com.jess.myrealtrip.databinding.SplashActivityBinding
+import com.jess.myrealtrip.presentation.main.view.MainActivity
 import com.jess.myrealtrip.presentation.splash.viewmodel.SplashViewModel
 
-class SplashActivity : BaseActivity<MainActivityBinding, SplashViewModel>() {
+class SplashActivity : AppCompatActivity() {
 
-    override val layoutRes = R.layout.main_activity
+    lateinit var binding: SplashActivityBinding
 
-    override val viewModelClass = SplashViewModel::class.java
-
-    override fun initLayout() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = DataBindingUtil.setContentView(this, R.layout.splash_activity)
+        Handler().postDelayed({
+            startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+            finish()
+        }, 1300)
     }
-
-    override fun onCreated(savedInstanceState: Bundle?) {
-
-    }
-
 }

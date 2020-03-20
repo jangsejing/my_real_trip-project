@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content">
 
                 <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
+                    android:id="@+id/tv_main"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:background="?attr/colorPrimary"
@@ -41,18 +41,24 @@
                 android:layout_height="match_parent"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_main"
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:id="@+id/refresh"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    bind:isClear="@{true}"
-                    bind:items="@{viewModel.item}"
-                    tools:listitem="@layout/main_item" />
+                    android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_main"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        bind:isClear="@{true}"
+                        bind:items="@{viewModel.item}"
+                        tools:listitem="@layout/main_item" />
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>

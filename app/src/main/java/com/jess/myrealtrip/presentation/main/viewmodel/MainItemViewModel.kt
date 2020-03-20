@@ -13,6 +13,7 @@ import timber.log.Timber
 import java.util.*
 import kotlin.collections.HashMap
 
+
 /**
  * Item ViewModel
  */
@@ -42,7 +43,6 @@ class MainItemViewModel(private val data: NewsData?) : BaseItemViewModel() {
                         setImage(doc)
                         setDescription(doc)
                     }
-
                     createTags(doc)
                 }
             }
@@ -60,7 +60,7 @@ class MainItemViewModel(private val data: NewsData?) : BaseItemViewModel() {
             if (image.isNullOrEmpty()) {
                 val ogImage = doc.select("meta[property=og:image]")?.first()?.attr("content")
                 val result = if (ogImage.isNullOrEmpty()) {
-                    doc.select("meta[name=image]").first().attr("content")
+                    doc.select("meta[name=image]")?.first()?.attr("content")
                 } else {
                     ogImage
                 }
@@ -81,7 +81,7 @@ class MainItemViewModel(private val data: NewsData?) : BaseItemViewModel() {
             if (description.isNullOrEmpty()) {
                 val ogDesc = doc.select("meta[property=og:description]")?.first()?.attr("content")
                 val result = if (ogDesc.isNullOrEmpty()) {
-                    doc.select("meta[name=description]").first().attr("content")
+                    doc.select("meta[name=description]")?.first()?.attr("content")
                 } else {
                     ogDesc
                 }
@@ -96,6 +96,12 @@ class MainItemViewModel(private val data: NewsData?) : BaseItemViewModel() {
      * - 빈도수가 높은 3건순으로 정렬 (빈도수가 같을 경우 오름차순 적용)
      */
     private fun createTags(doc: Document) {
+
+        val tagList = data?.tags?.get()
+        if (!tagList.isNullOrEmpty()) {
+            return
+        }
+
         val body = doc.select("body").text()
         body?.let {
             val st = StringTokenizer(body, " ")
@@ -113,7 +119,25 @@ class MainItemViewModel(private val data: NewsData?) : BaseItemViewModel() {
                     map[token] = 1
                 }
             }
-            Timber.d(map.toString())
+//            Timber.d(map.toString())
+
+            // 정렬
+            val list = LinkedList(map.entries)
+            list.sortWith(Comparator { o1, o2 ->
+                val comparision = (o1.value - o2.value) * -1
+                if (comparision == 0) o1.key.compareTo(o2.key) else comparision
+            })
+
+            // 정렬된 리스트 Add
+            val tags = mutableListOf<String>()
+            val iterator = list.iterator()
+            while (iterator.hasNext()) {
+                val entry = iterator.next()
+                if (tags.size < 3) {
+                    tags.add(entry.key)
+                }
+            }
+            data?.tags?.set(tags)
         }
     }
 }

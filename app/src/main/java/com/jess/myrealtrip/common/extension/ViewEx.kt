@@ -7,17 +7,14 @@ import android.widget.ImageView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
-import androidx.databinding.ViewDataBinding
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
 import com.jess.myrealtrip.R
-import com.jess.myrealtrip.common.base.BaseItemViewModel
-import com.jess.myrealtrip.common.base.BaseRecyclerViewAdapter
 import com.jess.myrealtrip.common.util.tryCatch
+import com.jess.myrealtrip.common.view.webview.WebView
 
 /**
  * Ripple 사각형
@@ -56,6 +53,8 @@ fun ImageView.loadImage(url: String?) {
         .load(url)
         .transition(DrawableTransitionOptions.withCrossFade())
         .centerCrop()
+        .placeholder(R.drawable.shp_rect_f5f5f5_r12)
+        .error(R.drawable.shp_rect_f5f5f5_r12)
         .apply(
             RequestOptions().transform(
                 CenterCrop(), RoundedCorners(
@@ -69,30 +68,6 @@ fun ImageView.loadImage(url: String?) {
 }
 
 /**
- * RecyclerView Adapter
- *
- * @param items
- * @param isClear
- */
-@BindingAdapter(value = ["items", "isClear"], requireAll = false)
-fun RecyclerView.addAllItem(
-    items: List<Any>?,
-    isClear: Boolean = true
-) {
-    tryCatch {
-        (this.adapter as? BaseRecyclerViewAdapter<Any, ViewDataBinding>)?.run {
-            if (isClear) {
-                this.clear()
-            }
-
-            if (!items.isNullOrEmpty()) {
-                this.addItems(items)
-            }
-        }
-    }
-}
-
-/**
  * Toolbar Title Setting
  */
 @BindingAdapter("toolbarTitle")
@@ -102,5 +77,18 @@ fun Toolbar.setToolbarTitle(title: String?) {
             return
         }
         this.title = title
+    }
+}
+
+/**
+ * Toolbar Title Setting
+ */
+@BindingAdapter("loadUrl")
+fun WebView.loadUrl(url: String?) {
+    tryCatch {
+        if (url.isNullOrEmpty()) {
+            return
+        }
+        this.loadUrl(url)
     }
 }

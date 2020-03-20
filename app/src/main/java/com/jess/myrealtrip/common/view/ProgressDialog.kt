@@ -1,4 +1,4 @@
-package com.jess.myrealtrip.common.view.dialog
+package com.jess.myrealtrip.common.view
 
 import android.app.Dialog
 import android.content.Context
@@ -17,7 +17,7 @@ import com.jess.myrealtrip.R
  *      .show()
  * @param context
  */
-class ProgressDialog(
+class   ProgressDialog(
     context: Context
 ) : Dialog(context, R.style.dialog_theme) {
 

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="String" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_root"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shp_rect_red_r12_st1"
+            android:paddingStart="5dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="3dp"
+            android:text="@{item}"
+            android:textColor="@android:color/white"
+            android:textSize="10sp"
+            tools:text="텍스트" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
