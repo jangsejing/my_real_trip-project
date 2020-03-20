@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="com.jess.myrealtrip.data.RssData.ItemData" />
+            type="com.jess.myrealtrip.data.ChannelData.ItemData" />
 
     </data>
 

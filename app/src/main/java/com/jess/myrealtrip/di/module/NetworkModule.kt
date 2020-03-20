@@ -49,9 +49,11 @@ class NetworkModule {
         okHttpClient: OkHttpClient
     ): GoogleService {
         return Retrofit.Builder()
-            .baseUrl("https://api.rss2json.com/")
+//            .baseUrl("https://api.rss2json.com/")
+            .baseUrl("https://news.google.com")
             .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create())
+//            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(ScalarsConverterFactory.create())
             .build()
             .create(GoogleService::class.java)
     }
