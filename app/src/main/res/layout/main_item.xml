@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -8,6 +9,10 @@
         <variable
             name="item"
             type="com.jess.myrealtrip.data.ChannelData.ItemData" />
+
+        <variable
+            name="viewModel"
+            type="com.jess.myrealtrip.presentation.main.viewmodel.MainItemViewModel" />
 
     </data>
 
@@ -25,8 +30,10 @@
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:background="@drawable/shp_rect_secondary_text_dark_r12"
+            android:scaleType="centerCrop"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            bind:loadImage="@{viewModel.image}" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_desc"
@@ -62,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="@{item.description}"
+                android:text="@{viewModel.description}"
                 android:textColor="@android:color/secondary_text_light"
                 android:textSize="14sp"
                 app:layout_constraintLeft_toLeftOf="parent"

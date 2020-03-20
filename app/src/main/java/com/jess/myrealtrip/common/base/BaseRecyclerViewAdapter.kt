@@ -16,7 +16,7 @@ import com.jess.myrealtrip.common.extension.addRipple
  * @author jess
  * @since 2019-06-07
  */
-internal abstract class BaseRecyclerViewAdapter<T : Any, D : ViewDataBinding>(
+internal abstract class BaseRecyclerViewAdapter<T : Any, VD : ViewDataBinding>(
     @LayoutRes private val layoutId: Int = 0
 ) : RecyclerView.Adapter<BaseViewHolder<T>>() {
 
@@ -50,7 +50,7 @@ internal abstract class BaseRecyclerViewAdapter<T : Any, D : ViewDataBinding>(
 
     override fun onBindViewHolder(holder: BaseViewHolder<T>, position: Int) {
         holder.onBind(list[position])
-        onBindData(position, list[position], holder.viewDataBinding as D)
+        onBindData(position, list[position], holder.viewDataBinding as VD)
     }
 
     override fun getItemCount(): Int {
@@ -97,7 +97,9 @@ internal abstract class BaseRecyclerViewAdapter<T : Any, D : ViewDataBinding>(
         this.isCircleRipple = isCircleRipple
     }
 
-    open fun createViewHolder(dataBinding: ViewDataBinding): BaseViewHolder<T> {
+    open fun createViewHolder(
+        dataBinding: ViewDataBinding
+    ): BaseViewHolder<T> {
         return BaseViewHolder(dataBinding)
     }
 
@@ -110,7 +112,7 @@ internal abstract class BaseRecyclerViewAdapter<T : Any, D : ViewDataBinding>(
         )
     }
 
-    open fun onBindData(position: Int, data: T?, dataBinding: D) {
+    open fun onBindData(position: Int, data: T?, dataBinding: VD) {
 
     }
 

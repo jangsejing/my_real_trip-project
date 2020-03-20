@@ -10,10 +10,12 @@ import androidx.databinding.BindingAdapter
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
 import com.jess.myrealtrip.R
+import com.jess.myrealtrip.common.base.BaseItemViewModel
 import com.jess.myrealtrip.common.base.BaseRecyclerViewAdapter
 import com.jess.myrealtrip.common.util.tryCatch
 
@@ -44,6 +46,7 @@ fun View.addCircleRipple() = with(TypedValue()) {
 /**
  * 이미지 로드
  */
+@BindingAdapter("loadImage")
 fun ImageView.loadImage(url: String?) {
     if (url.isNullOrEmpty()) {
         return
@@ -54,8 +57,8 @@ fun ImageView.loadImage(url: String?) {
         .transition(DrawableTransitionOptions.withCrossFade())
         .centerCrop()
         .apply(
-            RequestOptions.bitmapTransform(
-                RoundedCorners(
+            RequestOptions().transform(
+                CenterCrop(), RoundedCorners(
                     context.resources.getDimensionPixelSize(
                         R.dimen.dp12
                     )
@@ -86,18 +89,6 @@ fun RecyclerView.addAllItem(
                 this.addItems(items)
             }
         }
-    }
-}
-
-/**
- * 이미지 로드
- */
-@BindingAdapter("loadImage")
-fun ImageView.addAllItem(
-    url: String?
-) {
-    tryCatch {
-        this.loadImage(url)
     }
 }
 

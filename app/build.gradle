@@ -65,9 +65,8 @@ dependencies {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.jakewharton.timber:timber:4.7.1'
-    implementation 'com.airbnb.android:lottie:3.1.0'
-    implementation 'com.jaeger.statusbarutil:library:1.5.1'
     implementation 'com.github.smart-fun:XmlToJson:1.4.5'
+    implementation 'org.jsoup:jsoup:1.11.3'
 }
 
 // jetbrains

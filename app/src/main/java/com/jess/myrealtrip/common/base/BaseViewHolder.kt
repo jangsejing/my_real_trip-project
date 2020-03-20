@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jess.myrealtrip.BR
 import com.jess.myrealtrip.common.util.tryCatch
 
-open class BaseViewHolder<T : Any>(
+open class BaseViewHolder<T : Any?>(
     val viewDataBinding: ViewDataBinding
 ) : RecyclerView.ViewHolder(viewDataBinding.root) {
 
