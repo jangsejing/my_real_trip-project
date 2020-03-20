@@ -4,7 +4,7 @@ import android.os.Bundle
 import com.jess.myrealtrip.R
 import com.jess.myrealtrip.common.base.BaseActivity
 import com.jess.myrealtrip.common.base.BaseRecyclerViewAdapter
-import com.jess.myrealtrip.data.ChannelData
+import com.jess.myrealtrip.data.NewsData
 import com.jess.myrealtrip.databinding.MainActivityBinding
 import com.jess.myrealtrip.databinding.MainItemBinding
 import com.jess.myrealtrip.presentation.main.viewmodel.MainItemViewModel
@@ -20,16 +20,15 @@ class MainActivity : BaseActivity<MainActivityBinding, MainViewModel>() {
 
     override fun initLayout() {
         rv_main.adapter = object :
-            BaseRecyclerViewAdapter<ChannelData.ItemData, MainItemBinding>(R.layout.main_item) {
+
+            BaseRecyclerViewAdapter<NewsData, MainItemBinding>(R.layout.main_item) {
 
             override fun onBindData(
                 position: Int,
-                data: ChannelData.ItemData?,
+                data: NewsData?,
                 dataBinding: MainItemBinding
             ) {
-                dataBinding.viewModel ?: run {
-                    dataBinding.viewModel = MainItemViewModel(data)
-                }
+                dataBinding.viewModel = MainItemViewModel(data)
             }
         }.apply {
             setOnItemClickListener { view, itemData ->

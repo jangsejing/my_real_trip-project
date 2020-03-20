@@ -5,8 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.jess.myrealtrip.common.base.BaseViewModel
 import com.jess.myrealtrip.common.extension.safeScope
-import com.jess.myrealtrip.data.ChannelData
+import com.jess.myrealtrip.data.NewsData
+import com.jess.myrealtrip.data.RssResponseData.RssData.ChannelData.ItemData
 import com.jess.myrealtrip.repository.GoogleRepository
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -19,16 +21,20 @@ class MainViewModel @Inject constructor(
     private val repository: GoogleRepository
 ) : BaseViewModel() {
 
-    private val _item = MutableLiveData<List<ChannelData.ItemData>>()
-    val item: LiveData<List<ChannelData.ItemData>> = _item
+    private val _item = MutableLiveData<List<NewsData>>()
+    val item: LiveData<List<NewsData>> = _item
 
     /**
      * News 정보 가져오기
      */
     fun getNews() {
-        viewModelScope.safeScope().launch {
+        CoroutineScope(ioDispatchers).safeScope().launch {
             repository.getList()?.let { channel ->
-                _item.value = channel.item
+                val list = mutableListOf<NewsData>()
+                channel.item?.forEach { item ->
+                    list.add(NewsData(item.title, item.link))
+                }
+                _item.postValue(list)
             }
         }
     }

@@ -2,8 +2,7 @@ package com.jess.myrealtrip.repository
 
 import com.google.gson.Gson
 import com.jess.myrealtrip.common.util.tryCatch
-import com.jess.myrealtrip.data.ChannelData
-import com.jess.myrealtrip.data.RssData
+import com.jess.myrealtrip.data.RssResponseData
 import com.jess.myrealtrip.repository.service.GoogleService
 import fr.arnaudguyon.xmltojsonlib.XmlToJson
 
@@ -11,7 +10,7 @@ import fr.arnaudguyon.xmltojsonlib.XmlToJson
  * General Repository
  */
 interface GoogleRepository {
-    suspend fun getList(): ChannelData?
+    suspend fun getList(): RssResponseData.RssData.ChannelData?
 }
 
 class GoogleRepositoryImpl constructor(
@@ -23,12 +22,12 @@ class GoogleRepositoryImpl constructor(
      * com.github.smart-fun:XmlToJson 사용
      * @return
      */
-    override suspend fun getList(): ChannelData? {
+    override suspend fun getList(): RssResponseData.RssData.ChannelData? {
         tryCatch {
             val response = service.getList().body()
             response?.let {
                 val json = XmlToJson.Builder(response).build().toJson().toString()
-                val data = Gson().fromJson(json, RssData::class.java)
+                val data = Gson().fromJson(json, RssResponseData::class.java)
                 return data.rss?.channel
             }
         }

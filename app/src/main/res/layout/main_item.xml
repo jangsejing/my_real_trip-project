@@ -8,7 +8,7 @@
 
         <variable
             name="item"
-            type="com.jess.myrealtrip.data.ChannelData.ItemData" />
+            type="com.jess.myrealtrip.data.NewsData" />
 
         <variable
             name="viewModel"
@@ -29,11 +29,11 @@
             android:id="@+id/iv_thumbnail"
             android:layout_width="96dp"
             android:layout_height="96dp"
-            android:background="@drawable/shp_rect_secondary_text_dark_r12"
+            android:background="@drawable/shp_rect_f5f5f5_r12"
             android:scaleType="centerCrop"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            bind:loadImage="@{viewModel.image}" />
+            bind:loadImage="@{item.image}" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_desc"
@@ -57,7 +57,7 @@
                 android:maxLines="1"
                 android:text="@{item.title}"
                 android:textColor="@android:color/primary_text_light"
-                android:textSize="17sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -69,9 +69,9 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="@{viewModel.description}"
+                android:text="@{item.description}"
                 android:textColor="@android:color/secondary_text_light"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_title"
                 tools:text="컨텐츠입니다. 컨텐츠 길이가 길어지면 두줄로 보여집니다.컨텐츠입니다. 컨텐츠 길이가 길어지면 두줄로 보여집니다." />
