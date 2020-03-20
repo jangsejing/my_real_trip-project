@@ -1,22 +1,21 @@
-# MyRealTrip_Homework
+# MyRealTrip Homework
 ## Langauge
 Kotlin
 
 ## Arcitecture
 MVVM
 
-## Android
-### JetPack
+## JetPack
 AndroidX, AAC ViewModel, DataBinding, Lifecycle, LiveData
 
-### Network
+## Network
 Retrofit2
 
-### DI
+## DI
 Dagger2
 
-### Thread
+## Thread
 Coroutine
 
-### UI
+## UI
 Material
