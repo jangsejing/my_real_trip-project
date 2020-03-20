@@ -51,7 +51,7 @@ android {
 dependencies {
     testImplementation 'androidx.test:core:1.2.0'
     testImplementation 'androidx.test.ext:junit:1.1.1'
-    testImplementation 'org.mockito:mockito-core:2.25.0' // mock
+    testImplementation 'org.mockito:mockito-core:2.28.2' // mock
     testImplementation 'org.mockito:mockito-inline:2.25.0'
     testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.3'
     testImplementation 'androidx.arch.core:core-testing:2.1.0'
@@ -64,9 +64,10 @@ dependencies {
 // general
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.jakewharton.timber:timber:4.7.1'
-    implementation 'com.github.smart-fun:XmlToJson:1.4.5'
-    implementation 'org.jsoup:jsoup:1.11.3'
+    implementation 'com.jakewharton.timber:timber:4.7.1' // Logger
+    implementation 'org.jsoup:jsoup:1.11.3' // HTML Parser
+    implementation 'com.github.smart-fun:XmlToJson:1.4.5' // XML to JSON
+    implementation 'com.nex3z:flow-layout:1.3.0' // Flow Layout
 }
 
 // jetbrains
