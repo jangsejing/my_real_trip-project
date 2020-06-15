@@ -1,4 +1,4 @@
-# MyRealTrip Homework
+# MyRealTrip Project
 ## Langauge
 Kotlin
 
